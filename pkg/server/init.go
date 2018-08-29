@@ -23,7 +23,7 @@ func Init(app *app.App) error {
 	// you can init below variables using app.Resource()
 	var db resource.SQLDB
 	// using the name you specified in config, you can do this
-	// db, _ = app.Resource().GetSQLDB("mydatabase")
+	db, _ = app.Resource().GetSQLDB("toped")
 
 	// or we can init redis
 	var redis resource.Redis
