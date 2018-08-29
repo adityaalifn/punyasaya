@@ -1,8 +1,7 @@
 package server
 
 import (
-	"punyasaya/pkg/controller"
-
+	"github.com/adityaalifn/punyasaya/pkg/controller"
 	"github.com/tokopedia/tdk/go/app/http"
 )
 
@@ -15,8 +14,10 @@ func NewHttpServer() HttpService {
 
 func (s HttpService) RegisterHandler(r *http.Router) {
 	r.HandleFunc("/", index, "GET")
-	r.HandleFunc("/articles", controller.HandleGetArticle, "GET")
-	r.HandleFunc("/articles", controller.HandlePostArticle, "POST")
+	r.HandleFunc("/articles/get", controller.HandleGetArticle, "GET")
+	r.HandleFunc("/articles/post", controller.HandlePostArticle, "POST")
+
+	r.HandleFunc("/users/login", controller.HandleUserLogin)
 }
 
 func index(ctx http.TdkContext) error {
