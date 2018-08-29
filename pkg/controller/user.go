@@ -20,8 +20,8 @@ func HandleUserLogin(ctx http.TdkContext) error {
 	if err != nil {
 		return err
 	}
-	if request.Username != "kucing" && request.Password != "lucu" {
-		return ctx.Error(401, errors.New("unauthorized request"))
+	if request.Username != "kucing" || request.Password != "lucu" {
+		return ctx.Error(401, errors.New(string("{status: \"401 Unauthorized\"}")))
 	}
 	user := model.User{
 		Username: request.Username,
