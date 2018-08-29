@@ -4,9 +4,11 @@ import (
 	"encoding/json"
 	"fmt"
 
+	"punyasaya/pkg/controller"
+	"punyasaya/pkg/usecase"
+
 	"github.com/tokopedia/tdk/go/app/http"
 	"github.com/tokopedia/tdk/go/log"
-	"punyasaya/pkg/usecase"
 )
 
 type HttpService struct {
@@ -18,13 +20,15 @@ func NewHttpServer() HttpService {
 
 func (s HttpService) RegisterHandler(r *http.Router) {
 	r.HandleFunc("/", index, "GET")
+	r.HandleFunc("/articles", controller.HandleGetArticle, "GET")
+	r.HandleFunc("/articles", controller.HandlePostArticle, "POST")
 
 	r.HandleFunc("/new_order", handleNewOrder, "POST")
 
 }
 
 func index(ctx http.TdkContext) error {
-	ctx.Writer().Write([]byte("Hello world"))
+	ctx.Writer().Write([]byte("This is index"))
 	return nil
 }
 
