@@ -17,7 +17,7 @@ func (s HttpService) RegisterHandler(r *http.Router) {
 	r.HandleFunc("/articles/get", controller.HandleGetArticle, "GET")
 	r.HandleFunc("/articles/post", controller.HandlePostArticle, "POST")
 
-	r.HandleFunc("/users/login", controller.HandleUserLogin)
+	r.HandleFunc("/users/login", controller.HandleUserLogin, "POST")
 }
 
 func index(ctx http.TdkContext) error {
