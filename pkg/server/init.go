@@ -1,10 +1,9 @@
 package server
 
 import (
-	"punyasaya/pkg/domain"
-	"punyasaya/pkg/lib/config"
-	"punyasaya/pkg/usecase"
-
+	"github.com/adityaalifn/punyasaya/pkg/domain"
+	"github.com/adityaalifn/punyasaya/pkg/lib/config"
+	"github.com/adityaalifn/punyasaya/pkg/usecase"
 	"github.com/tokopedia/tdk/go/app"
 	"github.com/tokopedia/tdk/go/app/resource"
 )

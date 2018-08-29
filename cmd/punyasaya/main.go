@@ -5,8 +5,7 @@ import (
 	"flag"
 	"os"
 
-	"punyasaya/pkg/server"
-
+	"github.com/adityaalifn/punyasaya/pkg/server"
 	"github.com/tokopedia/tdk/go/app"
 	"github.com/tokopedia/tdk/go/flags"
 	"github.com/tokopedia/tdk/go/log"

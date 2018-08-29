@@ -3,8 +3,8 @@ package usecase
 import (
 	"fmt"
 
-	"punyasaya/pkg/domain"
-	"punyasaya/pkg/lib/config"
+	"github.com/adityaalifn/punyasaya/pkg/domain"
+	"github.com/adityaalifn/punyasaya/pkg/lib/config"
 )
 
 type Order struct {
